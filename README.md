@@ -11,19 +11,30 @@ Write a C program to print even numbers ranging from M to N (including M and N v
 6.	If the current number is even, print it.
 7.	Continue the loop until you have iterated through all numbers from M to N.
 
-## PROGRAM:
+## PROGRAM:c
+```
+#include <stdio.h>
 
+int main() {
+    int M, N;
+    printf("Enter the value of M: ");
+    scanf("%d", &M);
+    printf("Enter the value of N: ");
+    scanf("%d", &N);
+    printf("Even numbers from %d to %d are:\n", M, N);
+    for (int i = M; i <= N; i++)
+   {
+        if (i % 2 == 0)
+        {
+            printf("%d ", i);
+        }
+    }
+
+    return 0;
+}
+```
 ## OUTPUT:
-
-
-
-
-
-
-
-
-
-
+<img width="815" height="260" alt="Screenshot 2025-11-16 110357" src="https://github.com/user-attachments/assets/55ac3978-1bc2-4f4e-a534-6de78ba96a7e" />
 ## RESULT:
 Thus the program to print even numbers ranging from M to N (including M and N values) has been executed successfully
  
@@ -45,16 +56,30 @@ Write a C program to print the given triangular pattern using loop.
 5.	Continue the loop until you have printed the entire triangular pattern.
 
 ## PROGRAM:
+```
+#include <stdio.h>
 
+int main() {
+    int rows;
+    printf("Enter the number of rows: ");
+    scanf("%d", &rows);
+    for (int i = 1; i <= rows; i++)
+     {
+        for (int j = 1; j <= i; j++)
+        {
+            printf("* ");
+        }
+        printf("\n");
+    }
 
+    return 0;
+}
+```
 ## OUTPUT:
 
-
-
-
+<img width="800" height="346" alt="Screenshot 2025-11-16 110743" src="https://github.com/user-attachments/assets/7f6a448a-b90a-4e33-9494-64698c4e4577" />
 
 ## RESULT:
-
 Thus the program to print the given triangular pattern using loop has been executed successfully
  
  
@@ -74,17 +99,35 @@ Write a C program to perform addition and subtraction of two numbers using funct
 4.	Call the addition and subtraction functions, passing the two numbers as arguments.
 
 ## PROGRAM:
+```
+#include <stdio.h>
+void add(int a, int b);
+void subtract(int a, int b);
+void add(int a, int b) {
+    int sum = a + b;
+    printf("Addition: %d\n", sum);
+}
+void subtract(int a, int b)
+{
+    int diff = a - b;
+    printf("Subtraction: %d\n", diff);
+}
 
+int main()
+{
+    int num1, num2;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &num1, &num2);
+    add(num1, num2);
+    subtract(num1, num2);
+
+    return 0;
+}
+```
 
 ## OUTPUT:
-
-
-
-
-
-
+<img width="814" height="286" alt="Screenshot 2025-11-16 110920" src="https://github.com/user-attachments/assets/d0b66d6e-12ca-4fc2-9e42-3fc040a894ee" />
 ## RESULT:
-
 Thus the program to perform addition and subtraction of two numbers using functions has been executed successfully
  
  
@@ -106,19 +149,33 @@ Write a c program to find the sum of odd digits using for loop
 6.	Print the sum of odd digits.
 
 ## PROGRAM:
+```
+#include <stdio.h>
 
+int main() {
+    int num, digit, sum = 0;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    for (; num > 0; num = num / 10)
+  {
+        digit = num % 10;   
+
+        if (digit % 2 != 0)
+       {  
+            sum += digit;
+        }
+    }
+    printf("Sum of odd digits = %d\n", sum);
+
+    return 0;
+}
+```
 
 ## OUTPUT:
-
-
-
-
+<img width="799" height="254" alt="Screenshot 2025-11-16 111201" src="https://github.com/user-attachments/assets/c4102213-fd8b-4038-acca-2f4c7ed53993" />
 ## RESULT:
 
 Thus the program to find the sum of odd digits using for loop has been executed successfully.
-
-
-
 
 # EX – 10 - Factorial of a Number Using a Function
 ## AIM:
@@ -136,9 +193,29 @@ d.	After the loop, print the factorial value.
 5.	End
 
 ## PROGRAM:
+```
+#include <stdio.h>
+void fact();
+void fact() {
+    int i, N;
+    long long factorial = 1;  
+    printf("Enter a number: ");
+    scanf("%d", &N);
+    for (i = 1; i <= N; i++) {
+        factorial *= i;
+    }
+    printf("Factorial of %d = %lld\n", N, factorial);
+}
 
+int main() {
+    fact();
+    return 0;
+}
+```
 
 ## OUTPUT:
+
+<img width="811" height="230" alt="Screenshot 2025-11-16 111540" src="https://github.com/user-attachments/assets/7a1b42ca-776a-4b06-9601-4263747a72c5" />
 
 ## RESULT:
 The program correctly computes the factorial of a given number using a separate function and displays the result.
